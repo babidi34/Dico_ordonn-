@@ -29,11 +29,13 @@ class Dico():
                 On redirige vers self._dictionnaire[index] = valeur"""
 
         self._dictio[key] = value
-        self._liste_clé.append(key)
+        self._liste_clé.remove(key)
+
         self._liste_valeur.append(value)
+
     def __delitem__(self, key):
         del self._dictio[key]
-        
+        self._liste_clé.remove(key)
 didi={}
 didi["clé 1"]=1
 didi["clé 2"]=2
@@ -46,4 +48,5 @@ mon_dico["clé one"]="la premiere"
 del mon_dico["clé two"]
 
 print(mon_dico)
+print("{} {}".format(mon_dico._liste_clé, mon_dico._liste_valeur))
 
