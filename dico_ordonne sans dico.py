@@ -9,6 +9,8 @@ class Dico():
         self._liste_clé = list()
         self._liste_valeur = list()
         self.liste_dico = list()
+        self.indice_fin = len(self.liste_dico)
+        self.indice_debut = 0
 
     def copi(self,un_dico):
 
@@ -62,6 +64,35 @@ class Dico():
     def __len__(self):
         return len(self._liste_clé)
 
+    """def __lt__(self, key):
+        return self.liste_dico.sort()"""
+
+    """def __iter__(self):
+        i=0
+        for cle in self.liste_dico:
+
+            print(cle)"""
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        zer = len(self)
+        if self.indice_debut >= zer:
+            raise StopIteration
+        else:
+            x = self.indice_debut
+            self.indice_debut += 1
+            return self.liste_dico[x]
+    def _get_liste_clé(self):
+        return self._liste_clé
+    def _get_liste_valeur(self):
+        return self._liste_valeur
+
+    
+
+
+    liste_clé = property(_get_liste_clé)
+    liste_valeur = property(_get_liste_valeur)
 
 """mon_dico["clé one"]="the first"
 mon_dico["clé two"]="the second"
@@ -83,3 +114,16 @@ print(mon_dico)
 "clé six" in mon_dico
 print(len(mon_dico))
 print(mon_dico)
+
+
+for i in mon_dico:
+    print(i)
+
+for i in mon_dico.liste_clé:
+    print(i)
+for i in mon_dico.liste_valeur:
+    print(i)
+
+for i in mon_dico.keys:
+    print(i)
+

@@ -23,15 +23,21 @@ l'ordre d'ajout est important, pour trier ou/et inverser.
 //////////////////// OK //////////////////////
 
 5) On doit pouvoir savoir grâce au mot-clé in si une clé se trouve dans notre dictionnaire (cle in dictionnaire).
+/////////////////// OK /////////////////////////
 
 6) len(dictionnaire) doit fonctionner.
+ ////////////////// OK ////////////////////////
 
 7) print(dictionnaire) doit l'afficher comme un print sur un dictionnaire classique : exemple : {cle1: valeur1, cle2: valeur2, …}
+////////////////// OK //////////////////////////
 
 8) Créer méthodes pour trier (avec sort) et pour inverser (avec reverse).
 Le tri dois se faire en fonction des clés.
 
+
 9) L'objet doit pouvoir être parcouru. Quand on écrit for cle in dictionnaire, on doit parcourir la liste des clés contenues dans le dictionnaire.
+////////////////// OK //////////////////////
+
 
 10) À l'instar des dictionnaires, trois méthodes keys() (renvoyant la liste des clés), values() (renvoyant la liste des valeurs) et items() (renvoyant les couples (clé, valeur)) doivent être mises en œuvre. Le type de retour de ces méthodes est laissé à votre initiative : il peut s'agir d'itérateurs ou de générateurs (tant qu'on peut les parcourir).
 
