@@ -1,5 +1,7 @@
 # -*utf-8*
 
+
+
 class Dico():
 
     def __init__(self):
@@ -17,7 +19,8 @@ class Dico():
             values.append(valeur)
         self._liste_clé = keys
         self ._liste_valeur = valeur
-
+    def __repr__(self):
+        return self.liste_dico
 
     def __str__(self):
 
@@ -36,17 +39,28 @@ class Dico():
                 if key == elt:
                     num_indice = i
             del self._liste_valeur[num_indice]
-            self._liste_valeur(i, value)
+            del self.liste_dico[num_indice]
+            self._liste_valeur.insert(num_indice, value)
+        else:
 
-        self._liste_clé.append(key)
-        self._liste_valeur.append(value)
-        for clé,valeur in zip(self._liste_clé, self._liste_valeur):
-            self.liste_dico.append(clé" : "valeur)
+            self._liste_clé.append(key)
+            self._liste_valeur.append(value)
+            self.liste_dico.append(key+" : "+value)
 
-    """def __delitem__(self, key):
-        del self._dictio[key]
-        self._liste_clé.remove(key)"""
+    def __delitem__(self, key):
+        if key in self._liste_clé:
+            indice = self._liste_clé.index(key)
+            self._liste_clé.remove(key)
+            del self._liste_valeur[indice]
+            del self.liste_dico[indice]
 
+    def __contains__(self, key):
+         if key in self._liste_clé:
+             print("True")
+         else:
+            print("False")
+    def __len__(self):
+        return len(self._liste_clé)
 
 
 """mon_dico["clé one"]="the first"
@@ -58,6 +72,14 @@ print(mon_dico)
 print("{} {}".format(mon_dico._liste_clé, mon_dico._liste_valeur))"""
 
 mon_dico = Dico()
-mon_dico["clé six"]="la 6"
+#mon_dico["clé six"]="la 6"
+mon_dico["clé six"]="6"
+mon_dico["clé sept"]="7"
+del mon_dico["clé sept"]
+mon_dico["clé dix"]="10"
 print("{} : {}".format(mon_dico._liste_clé, mon_dico._liste_valeur))
+print(mon_dico)
+
+"clé six" in mon_dico
+print(len(mon_dico))
 print(mon_dico)

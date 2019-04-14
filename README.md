@@ -8,15 +8,19 @@ Les clés et les valeurs doivent toujours être associé (comme si c'était un v
 l'ordre d'ajout est important, pour trier ou/et inverser.
 
 1) On doit pouvoir créer le dico du plusieurs façon :
- *Vide : on appelle le constructeur sans lui passer aucun paramètre et le dictionnaire créé est donc vide.
+ *Vide : on appelle le constructeur sans lui passer aucun paramètre et le dictionnaire créé est donc vide. ////////////// OK //////////////////////
+
  *Copié depuis un dictionnaire: on passe en paramètre du constructeur un dictionnaire que l'on copie par la suite dans notre objet. On peut ainsi écrire constructeur(dictionnaire) et les clés et valeurs contenues dans le dictionnaire sont copiées dans l'objet construit.
  *Pré-rempli grâce à des clés et valeurs passées en paramètre : comme les dictionnaires usuels, on doit ici avoir la possibilité de pré-remplir notre objet avec des couples clés-valeurs passés en paramètre (constructeur(cle1 = valeur1, cle2 = valeur2, …)).
 
 2) clés et valeur sont associé, si on supprime une clé la valeur est supprimée aussi. liste valeur et liste clé sont de même taille.
+///////////////////// OK //////////////////////
 
 3) On doit pouvoir faire objet[cle]=valeur pour la modifier ou del objet[cle] pour la supprimer.
+//////////////////// OK  /////////////////////
 
-4) Quand on modifie une valeur elle écrase la valeur précédente
+4) Quand on modifie une valeur elle écrase la valeur précédent
+//////////////////// OK //////////////////////
 
 5) On doit pouvoir savoir grâce au mot-clé in si une clé se trouve dans notre dictionnaire (cle in dictionnaire).
 
